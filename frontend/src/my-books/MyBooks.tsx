@@ -18,11 +18,12 @@ If not, see <https://www.gnu.org/licenses/>.
 import React, { Component, ReactElement } from "react";
 import { NavBar } from "../shared/navigation/NavBar";
 import { ShelfCarousel } from "../shared/book-display/ShelfCarousel";
-import "./MyBooks.css";
+import { Layout } from '../shared/components/Layout';
 import Button from "@material-ui/core/Button";
 import ShelfModal from "./ShelfModal";
 import Hidden from "@material-ui/core/Hidden";
 import MenuIcon from "@material-ui/icons/Menu";
+import "./MyBooks.css";
 
 interface IState {
     showShelfModal: boolean;
@@ -51,11 +52,10 @@ class MyBooks extends Component<Record<string, unknown>, IState> {
     }
     render(): ReactElement {
         return (
-            <div>
+            <Layout title="My books">
                 <NavBar />
                 <Hidden smDown implementation="css">
                     <div className="my-book-top">
-                        <h1>My books</h1>
                         <div className="my-book-top-buttons">
                             <Button
                                 variant="contained"
@@ -87,7 +87,7 @@ class MyBooks extends Component<Record<string, unknown>, IState> {
                     open={this.state.showShelfModal}
                     onClose={this.onAddShelfModalClose}
                 />
-            </div>
+            </Layout>
         );
     }
 }
