@@ -54,29 +54,24 @@ class MyBooks extends Component<Record<string, unknown>, IState> {
         return (
             <Layout title="My books">
                 <NavBar />
-                <Hidden smDown implementation="css">
-                    <div className="my-book-top">
-                        <div className="my-book-top-buttons">
-                            <Button
-                                variant="contained"
-                                className="tempButton"
-                                color="primary"
-                            >
-                                Add Book
-                            </Button>
-                            <Button
-                                onClick={this.onAddShelf}
-                                variant="contained"
-                                color="primary"
-                            >
-                                Add Shelf
-                            </Button>
-                        </div>
+                <div className="my-book-top">
+                    <div className="my-book-top-buttons">
+                        <Button
+                            variant="contained"
+                            className="tempButton"
+                            color="primary"
+                        >
+                            Add Book
+                        </Button>
+                        <Button
+                            onClick={this.onAddShelf}
+                            variant="contained"
+                            color="primary"
+                        >
+                            Add Shelf
+                        </Button>
                     </div>
-                </Hidden>
-                <Hidden mdUp implementation="css">
-                    <MenuIcon className="my-book-top" />
-                </Hidden>
+                </div>
                 <div>
                     <ShelfCarousel title="Reading" />
                     <ShelfCarousel title="To Read" />
